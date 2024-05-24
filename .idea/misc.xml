@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.12478977463841238" />
+        <entry key="app/src/main/res/drawable/arrow_circle_down.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/background.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/bg_border_download_disable.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/bg_border_download_enable.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/bottom_nav_bg_color.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/bottom_nav_icon_color.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/button.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/circle.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/favicon_facebook.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/favicon_instagram.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/favicon_myspace.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/favicon_tumblr.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/favicon_twitter.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/favicon_vimeo.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/favicon_vine.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/favicon_vk.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/favicon_youku.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/folder_24.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/gradiant_bg.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/greydivider.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/guide_bg.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_back.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_baseline_delete_sweep_24.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_cancel.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_close.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_delete.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_downloads.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_facebook.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_file_download.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_instagram.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_more.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_no_history.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_pause.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_play.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_reddit.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_rename.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_settings.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_share.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_tik_tok.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_tumblr.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/ic_twitter.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/loading_page_progress_status.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/tab_text_bg.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/uvv_progress_rotate.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/uvv_star_play_progress_seek.xml" value="0.18" />
+        <entry key="app/src/main/res/drawable/window_bg.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_guide.xml" value="0.154918819841039" />
+        <entry key="app/src/main/res/layout/activity_history.xml" value="0.3301003994308827" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15677966101694915" />
+        <entry key="app/src/main/res/layout/activity_slashs.xml" value="0.1322463768115942" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/browser.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/browser_toolbar.xml" value="0.2360726894699452" />
+        <entry key="app/src/main/res/layout/custom_on_error_layout.xml" value="0.31823363917697645" />
+        <entry key="app/src/main/res/layout/custom_on_loading_layout.xml" value="0.2691384853683827" />
+        <entry key="app/src/main/res/layout/custom_player_controller.xml" value="0.3099755825363515" />
+        <entry key="app/src/main/res/layout/dialog_guide.xml" value="0.304436642106664" />
+        <entry key="app/src/main/res/layout/dialog_youtube.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/downloads.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/downloads_c.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/downloads_completed.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/downloads_completed_item.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/downloads_in_progress.xml" value="0.2167367519699452" />
+        <entry key="app/src/main/res/layout/downloads_in_progress_item.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/guide_item.xml" value="0.347280544163193" />
+        <entry key="app/src/main/res/layout/history.xml" value="0.45643859523166397" />
+        <entry key="app/src/main/res/layout/history_item.xml" value="0.514782101091039" />
+        <entry key="app/src/main/res/layout/settings.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/video_qualities_dialog.xml" value="0.49156890529025776" />
+        <entry key="app/src/main/res/layout/video_sites_item.xml" value="0.1752786220871327" />
+        <entry key="app/src/main/res/layout/videos_found_item.xml" value="0.40428863185275776" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.24342105263157895" />
+        <entry key="app/src/main/res/menu/completed_menu.xml" value="0.2953703703703704" />
+        <entry key="app/src/main/res/menu/download_menu.xml" value="0.2953703703703704" />
+        <entry key="app/src/main/res/menu/download_progress_menu.xml" value="0.2953703703703704" />
+        <entry key="app/src/main/res/menu/history_menu.xml" value="0.2953703703703704" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.18" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18" />
+        <entry key="app/src/main/res/xml/provider_paths.xml" value="0.1752786220871327" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
