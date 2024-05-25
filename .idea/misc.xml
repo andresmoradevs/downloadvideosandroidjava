@@ -55,13 +55,13 @@
         <entry key="app/src/main/res/drawable/uvv_progress_rotate.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/uvv_star_play_progress_seek.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/window_bg.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_guide.xml" value="0.154918819841039" />
+        <entry key="app/src/main/res/layout/activity_guide.xml" value="0.33579040187228903" />
         <entry key="app/src/main/res/layout/activity_history.xml" value="0.3301003994308827" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15677966101694915" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3556108377747617" />
         <entry key="app/src/main/res/layout/activity_slashs.xml" value="0.1322463768115942" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.1752786220871327" />
         <entry key="app/src/main/res/layout/browser.xml" value="0.1752786220871327" />
-        <entry key="app/src/main/res/layout/browser_toolbar.xml" value="0.2360726894699452" />
+        <entry key="app/src/main/res/layout/browser_toolbar.xml" value="0.47639556544650774" />
         <entry key="app/src/main/res/layout/custom_on_error_layout.xml" value="0.31823363917697645" />
         <entry key="app/src/main/res/layout/custom_on_loading_layout.xml" value="0.2691384853683827" />
         <entry key="app/src/main/res/layout/custom_player_controller.xml" value="0.3099755825363515" />
@@ -69,9 +69,9 @@
         <entry key="app/src/main/res/layout/dialog_youtube.xml" value="0.1752786220871327" />
         <entry key="app/src/main/res/layout/downloads.xml" value="0.1752786220871327" />
         <entry key="app/src/main/res/layout/downloads_c.xml" value="0.1752786220871327" />
-        <entry key="app/src/main/res/layout/downloads_completed.xml" value="0.1752786220871327" />
-        <entry key="app/src/main/res/layout/downloads_completed_item.xml" value="0.1752786220871327" />
-        <entry key="app/src/main/res/layout/downloads_in_progress.xml" value="0.2167367519699452" />
+        <entry key="app/src/main/res/layout/downloads_completed.xml" value="0.4564050258957265" />
+        <entry key="app/src/main/res/layout/downloads_completed_item.xml" value="0.36204162257541395" />
+        <entry key="app/src/main/res/layout/downloads_in_progress.xml" value="0.3993891541386994" />
         <entry key="app/src/main/res/layout/downloads_in_progress_item.xml" value="0.1752786220871327" />
         <entry key="app/src/main/res/layout/guide_item.xml" value="0.347280544163193" />
         <entry key="app/src/main/res/layout/history.xml" value="0.45643859523166397" />
