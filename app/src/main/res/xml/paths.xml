@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024.  hurricaneDev Development
+  -->
+
+<paths>
+    <external-path
+        name="downloads"
+        path="DescargaVideos/" />
+    <external-files-path name="my_video_downloads" path="." />
+</paths>

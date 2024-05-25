@@ -1,0 +1,61 @@
+<!--
+  ~ Copyright (c) 2024.  hurricaneDev Development
+  -->
+
+<resources>
+
+
+    <string name="app_name">Descarga Videos</string>
+
+    <string name="admob_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="intersititial">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="title_home">Pestañas</string>
+    <string name="title_downloads">Descargas</string>
+    <string name="title_tutorial">Tutorial</string>
+
+
+    <string name="enter_url">Ingresar URL</string>
+
+    <string name="msg_share">Download the best video downloader app of all time!</string>
+    <string name="app_link">https://play.google.com/store</string>
+
+    <string name="no_history">Sin Historial</string>
+    <string name="history">Historial</string>
+    <string name="progress">Progreso</string>
+    <string name="progress_caps">Progreso</string>
+    <string name="delete">Eliminar</string>
+    <string name="open_url">Abrir Url</string>
+    <string name="copy_url">Copiar Url</string>
+    <string name="copy_msg">URL Copiada</string>
+    <string name="video">Videos</string>
+    <string name="share">Compartir</string>
+    <string name="shareus">Compartenos</string>
+    <string name="recommend">Sitios Recomendados</string>
+    <string name="moreapp">Explorar más apps</string>
+    <string name="share_msg">Bajar videos a mi celular</string>
+    <string name="go_to_folder">Localidad</string>
+    <string name="rename">Renombrar</string>
+    <string name="download">Descarga</string>
+    <string name="download_caps">Descargas</string>
+    <string name="speed_0">Velocidad: 0KB/s</string>
+    <string name="remaining_undefine">Restante: —</string>
+    <string name="empty_download_list">Seguro que quieres limpiar la lista?</string>
+
+    <string name="settings">Ajustes</string>
+    <string name="vibrate">Vibrar al Completar la Descarga</string>
+    <string name="sound">Sonar al Completar la Descarga</string>
+    <string name="browser">Navegador</string>
+    <string name="ad_blocker">Ad Blocker</string>
+    <string name="help">Ayuda</string>
+    <string name="rate">Calificanos</string>
+    <string name="privacy_policy">Politica de privacidad</string>
+    <string name="privacy_policy_link">https://en.wikipedia.org/wiki/Privacy_policy</string>
+    <string name="no_video_msg">Vaya a la <b>seccion de ajustes o detalles del video</b> para <b>reproducir el video</b>, y el botón de descarga se activará una vez detectemos el video.</string>
+
+    <string-array name="blocked_sites">
+        <!--        <item>youtube.com</item>-->
+    </string-array>
+
+</resources>
