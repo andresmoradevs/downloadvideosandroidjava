@@ -127,17 +127,14 @@ public class GuideActivity extends AppCompatActivity {
                       infoText.setVisibility(View.VISIBLE);
                       next.setBackgroundResource(R.drawable.btn_ok);
                       back.setVisibility(View.INVISIBLE);
+
+
                     break;
                 case 3:
                     infoText.setVisibility(View.INVISIBLE);
                     infoText.setVisibility(View.GONE);
-                    next.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent);
-                        }
-                    });
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
 
                     break;
                 default:
@@ -164,7 +161,6 @@ public class GuideActivity extends AppCompatActivity {
         list.add(new GuideModel("1", "Coloca la URL del video\n que desea descargar", R.drawable.info_one));
         list.add(new GuideModel("2", "Reproduce el video que\n deseas descargar", R.drawable.info_two));
         list.add(new GuideModel("3", "Haz click en el botón\n naranja de descarga", R.drawable.info_three));
-        list.add(new GuideModel("1", "Coloca la URL del video\n que desea descargar", 0));
         return list;
     }
 

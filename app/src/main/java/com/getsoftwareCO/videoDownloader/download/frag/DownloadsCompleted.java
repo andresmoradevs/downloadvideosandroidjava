@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,10 +50,10 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
     CompletedVideos completedVideos;
     ImageView btnHome, btnSet;
 
-    OnNumDownloadsCompletedChangeListener onNumDownloadsCompletedChangeListener;
+    private OnNumDownloadsCompletedChangeListener onNumDownloadsCompletedChangeListener;
     SavedAdapter adapter;
     LinearLayout empty;
-    TextView emptyT;
+    TextView emptyT, titleD;
 
     public SavedAdapter getAdapter() {
         return adapter;
@@ -90,9 +91,13 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
             Button clearAllFinishedButton = view.findViewById(R.id.clearAllFinishedButton);
             Button goToFolderButton = view.findViewById(R.id.goToFolder);
 
-            empty = view.findViewById(R.id.empty_download);
+            //empty = view.findViewById(R.id.empty_download);
             emptyT = view.findViewById(R.id.empty_title);
+            titleD = view.findViewById(R.id.title_downloads);
+
             btnHome = view.findViewById(R.id.btn_home);
+
+
 
             btnHome.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -115,24 +120,35 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
                                 List<File> nonExistentFiles = new ArrayList<>(Arrays.asList(videoFile.listFiles()));
 
                                 if (!nonExistentFiles.isEmpty()) {
-                                    empty.setVisibility(View.INVISIBLE);
-                                    emptyT.setVisibility(View.INVISIBLE);
-                                    adapter = new SavedAdapter(nonExistentFiles, getContext());
+//                                    empty.setVisibility(View.INVISIBLE);
+//                                    emptyT.setVisibility(View.INVISIBLE);
+//                                    titleD.setVisibility(View.VISIBLE);
+                                    adapter = new SavedAdapter(nonExistentFiles, getActivity().getApplicationContext());
                                     downloadsList.setAdapter(adapter);
                                     downloadsList.setLayoutManager(new GridLayoutManager(getActivity(), 2));
                                     downloadsList.setHasFixedSize(true);
 
                                 } else {
-                                    empty.setVisibility(View.VISIBLE);
+//                                    empty.setVisibility(View.VISIBLE);
+//                                    titleD.setVisibility(View.GONE);
+//                                    emptyT.setVisibility(View.VISIBLE);
+                                    Log.d("12","231");
                                 }
 
 
+                            } else {
+                                Log.d("12","321");
+                                emptyT.setVisibility(View.VISIBLE);
                             }
+                            Log.d("12","123");
+                            titleD.setVisibility(View.VISIBLE);
                         }
 
                         @Override
                         public void onPermissionDenied(PermissionDeniedResponse response) {
                             //nada
+                            Intent intentHome  = new Intent(getContext(), MainActivity.class);
+                            startActivity(intentHome);
                         }
 
                         @Override

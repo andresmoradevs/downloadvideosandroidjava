@@ -4,17 +4,14 @@
 
 package com.getsoftwareCO.videoDownloader.download.frag;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
@@ -42,7 +39,6 @@ public class DownloadsC extends VDFragment implements MainActivity.OnBackPressed
         }
         super.onDestroy();
     }
-
 
     @Override
     public View onCreateView(final LayoutInflater inflater, final ViewGroup container,

@@ -109,8 +109,6 @@ public class DownloadsInProgress extends VDFragment implements DownloadManager.O
         queues = DownloadQueues.load(activity);
         downloads = queues.getList();
 
-
-
         if (view == null) {
             view = inflater.inflate(R.layout.downloads_in_progress, container, false);
 
@@ -125,7 +123,6 @@ public class DownloadsInProgress extends VDFragment implements DownloadManager.O
             } else {
                 empty.setVisibility(View.VISIBLE);
             }
-
 
             downloadsStartPauseButton = view.findViewById(R.id.downloadsStartPauseButton);
 
@@ -175,7 +172,7 @@ public class DownloadsInProgress extends VDFragment implements DownloadManager.O
 
     private void settingsClicked(){
         if (manager.findFragmentByTag(SETTING) == null) {
-//            browserManager.hideCurrentWindow();
+            browserManager.hideCurrentWindow();
             browserManager.pauseCurrentWindow();
             navView.setVisibility(View.GONE);
             manager.beginTransaction().add(R.id.main_content, new Settings(), SETTING).commit();
@@ -238,7 +235,6 @@ public class DownloadsInProgress extends VDFragment implements DownloadManager.O
             onNumDownloadsInProgressChangeListener.onNumDownloadsInProgressChange();
         }
     }
-
 
     @Override
     public void onDownloadWithNewLink(final DownloadVideo download) {

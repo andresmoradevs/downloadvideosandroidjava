@@ -7,7 +7,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@drawable/back_screen">
 
     <ImageView
@@ -47,7 +46,7 @@
         app:layout_constraintStart_toEndOf="@+id/btn_home" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+        android:id="@+id/cardViewProgress"
         android:layout_width="wrap_content"
         android:layout_height="350dp"
         android:layout_above="@+id/downloadsStartPauseButton"

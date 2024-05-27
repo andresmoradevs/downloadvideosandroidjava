@@ -34,6 +34,7 @@ import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.getsoftwareCO.videoDownloader.R;
@@ -74,6 +75,7 @@ public class BrowserWindow extends VDFragment implements View.OnClickListener, M
     private ImageView foundVideosClose;
 
     private ProgressBar loadingPageProgress;
+    private CardView cardViewApps;
 
     private int orientation;
     private boolean loadedFirsTime;
@@ -218,6 +220,8 @@ public class BrowserWindow extends VDFragment implements View.OnClickListener, M
                 ((ViewGroup) view).bringChildToFront(view.findViewById(R.id.videosFoundHUD));
                 ((ViewGroup) view).bringChildToFront(view.findViewById(R.id.foundVideosWindow));
             }
+//            cardViewApps = view.findViewById(R.id.card_view_apps);
+//            cardViewApps.setVisibility(View.GONE);
             loadingPageProgress = view.findViewById(R.id.loadingPageProgress);
             loadingPageProgress.setVisibility(View.GONE);
 

@@ -82,20 +82,20 @@ public class Settings extends VDFragment implements MainActivity.OnBackPressedLi
             });
 
             //Rate app
-            TextView btnRateApp = view.findViewById(R.id.rateApp);
-            btnRateApp.setOnClickListener(this);
+//            TextView btnRateApp = view.findViewById(R.id.rateApp);
+//            btnRateApp.setOnClickListener(this);
 
             //Share app
-            TextView btnShareApp = view.findViewById(R.id.shareApp);
-            btnShareApp.setOnClickListener(this);
-
-            //More app
-            TextView btnMoreApp = view.findViewById(R.id.moreApp);
-            btnMoreApp.setOnClickListener(this);
-
-            //Privacy Policy
-            TextView btnPrivacyPolicy = view.findViewById(R.id.privacyPolicy);
-            btnPrivacyPolicy.setOnClickListener(this);
+//            TextView btnShareApp = view.findViewById(R.id.shareApp);
+//            btnShareApp.setOnClickListener(this);
+//
+//            //More app
+//            TextView btnMoreApp = view.findViewById(R.id.moreApp);
+//            btnMoreApp.setOnClickListener(this);
+//
+//            //Privacy Policy
+//            TextView btnPrivacyPolicy = view.findViewById(R.id.privacyPolicy);
+//            btnPrivacyPolicy.setOnClickListener(this);
 
         }
         return view;
@@ -113,18 +113,18 @@ public class Settings extends VDFragment implements MainActivity.OnBackPressedLi
             case R.id.btn_settings_back:
                 getActivity().onBackPressed();
                 break;
-            case R.id.rateApp:
-                rateApp();
-                break;
-            case R.id.shareApp:
-                shareApp();
-                break;
-            case R.id.moreApp:
-                Toast.makeText(getContext(), "Nothing yet", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.privacyPolicy:
-                privacyPolicyClicked();
-                break;
+//            case R.id.rateApp:
+//                rateApp();
+//                break;
+//            case R.id.shareApp:
+//                shareApp();
+//                break;
+//            case R.id.moreApp:
+//                Toast.makeText(getContext(), "Nothing yet", Toast.LENGTH_SHORT).show();
+//                break;
+//            case R.id.privacyPolicy:
+//                privacyPolicyClicked();
+//                break;
             default:
                 break;
         }

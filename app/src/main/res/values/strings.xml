@@ -43,7 +43,7 @@
     <string name="remaining_undefine">Restante: —</string>
     <string name="empty_download_list">Seguro que quieres limpiar la lista?</string>
 
-    <string name="settings">Ajustes</string>
+    <string name="settings">Configuración</string>
     <string name="vibrate">Vibrar al Completar la Descarga</string>
     <string name="sound">Sonar al Completar la Descarga</string>
     <string name="browser">Navegador</string>
