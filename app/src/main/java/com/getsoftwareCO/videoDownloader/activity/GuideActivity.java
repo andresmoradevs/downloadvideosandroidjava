@@ -4,7 +4,9 @@
 
 package com.getsoftwareCO.videoDownloader.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,6 +48,8 @@ import java.util.List;
 
 
 public class GuideActivity extends AppCompatActivity {
+
+    private static final int STORAGE_PERMISSION_CODE = 1;
 
     private ViewPager2 pager;
     private AdvancedCardView back, next;
@@ -127,14 +131,31 @@ public class GuideActivity extends AppCompatActivity {
                       infoText.setVisibility(View.VISIBLE);
                       next.setBackgroundResource(R.drawable.btn_ok);
                       back.setVisibility(View.INVISIBLE);
-
+                      next.setOnClickListener(new View.OnClickListener() {
+                          @Override
+                          public void onClick(View view) {
+                              if (ContextCompat.checkSelfPermission(getApplicationContext(),
+                                      Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                                  // Permiso ya concedido, realiza la descarga del archivo
+                                  Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                  startActivity(intent);
+//                                  downloadFile();
+                              } else {
+                                  // Solicita el permiso
+                                  requestStoragePermission();
+                              }
+                          }
+                      });
 
                     break;
                 case 3:
-                    infoText.setVisibility(View.INVISIBLE);
-                    infoText.setVisibility(View.GONE);
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    startActivity(intent);
+
+
+
+//                    infoText.setVisibility(View.INVISIBLE);
+//                    infoText.setVisibility(View.GONE);
+//                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+//                    startActivity(intent);
 
                     break;
                 default:
@@ -146,9 +167,6 @@ public class GuideActivity extends AppCompatActivity {
         }
     };
 
-    private void requestStoragePermission() {
-
-    }
 
     @Override
     protected void onDestroy() {
@@ -162,6 +180,31 @@ public class GuideActivity extends AppCompatActivity {
         list.add(new GuideModel("2", "Reproduce el video que\n deseas descargar", R.drawable.info_two));
         list.add(new GuideModel("3", "Haz click en el botón\n naranja de descarga", R.drawable.info_three));
         return list;
+    }
+
+    private void requestStoragePermission() {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+            // Muestra una explicación al usuario (opcional)
+            Toast.makeText(this, "Se necesita permiso para guardar archivos en tu dispositivo", Toast.LENGTH_SHORT).show();
+        }
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == STORAGE_PERMISSION_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permiso concedido, realiza la descarga del archivo
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+//                downloadFile();
+            } else {
+                // Permiso denegado
+                Toast.makeText(this, "Permiso denegado", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
 }
