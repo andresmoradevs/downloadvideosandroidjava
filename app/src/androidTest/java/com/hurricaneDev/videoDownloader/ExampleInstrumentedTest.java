@@ -26,6 +26,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.getsoftwareCO.videoDownloader", appContext.getPackageName());
+        assertEquals("com.getsoftwareCO.bajarvideosamicelulargratis", appContext.getPackageName());
     }
 }

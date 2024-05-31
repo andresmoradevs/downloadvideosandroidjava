@@ -22,7 +22,7 @@
     <string name="app_link">https://play.google.com/store</string>
 
     <string name="no_history">Sin Historial</string>
-    <string name="history">Historial</string>
+    <string name="history">Pestañas</string>
     <string name="progress">Progreso</string>
     <string name="progress_caps">Progreso</string>
     <string name="delete">Eliminar</string>

@@ -3,8 +3,10 @@
   ~ Copyright (c) 2024.  Andres Mora getSoftware CO
   -->
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back_screen">
@@ -34,28 +36,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp"
-        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
         android:text="Progreso"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewProgress"
         app:layout_constraintEnd_toStartOf="@+id/btn_settings"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toEndOf="@+id/btn_home" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="350dp"
-        android:layout_above="@+id/downloadsStartPauseButton"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginTop="10dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="105dp"
         android:backgroundTint="#A1F6F1EF"
         app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.317">
 
         <LinearLayout
             android:id="@+id/empty_progress"
@@ -72,26 +75,27 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="80dp"
-                android:textStyle="bold"
                 android:text="No tiene descargas en progreso disponibles!"
                 android:textAlignment="center"
-                android:textFontWeight="900"
                 android:textColor="@color/dark_gray"
-                android:textSize="18sp" />
+                android:textFontWeight="900"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/downloadsList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="0dp"
-            android:layout_marginBottom="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:paddingTop="8dp"
-            android:paddingBottom="88dp" />
+            android:paddingHorizontal="8dp"
+            android:paddingTop="38dp"
+            android:paddingBottom="88dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.cardview.widget.CardView>
 

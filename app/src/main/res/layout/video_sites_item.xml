@@ -30,7 +30,7 @@
             android:adjustViewBounds="true"
             android:layout_gravity="center_horizontal"
             android:src="@drawable/favicon_facebook" />
-        <com.getsoftwareCO.videoDownloader.utils.CustomText
+        <com.getsoftwareCO.bajarvideosamicelulargratis.utils.CustomText
             android:id="@+id/ivVideoSiteName"
             android:padding="@dimen/_4sdp"
             android:layout_width="match_parent"

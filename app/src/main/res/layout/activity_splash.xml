@@ -3,10 +3,7 @@
   ~ Copyright (c) 2024.  Andres Mora getSoftware CO
   -->
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/splash_screen"
-    android:layout_height="wrap_content"
-    >
-</RelativeLayout>
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_screen"></RelativeLayout>

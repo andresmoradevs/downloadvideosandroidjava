@@ -26,7 +26,7 @@
         android:progressDrawable="@drawable/loading_page_progress_status"
         android:layout_centerInParent="true"/>
 
-    <com.getsoftwareCO.videoDownloader.browser.TouchableWebView
+    <com.getsoftwareCO.bajarvideosamicelulargratis.browser.TouchableWebView
         android:id="@+id/page"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -95,7 +95,7 @@
         android:visibility="gone"
         android:background="@android:color/black">
 
-        <com.getsoftwareCO.videoDownloader.view.CustomVideoView
+        <com.getsoftwareCO.bajarvideosamicelulargratis.view.CustomVideoView
             android:id="@+id/videoFoundView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -103,7 +103,7 @@
             app:uvv_autoRotation="true"
             app:uvv_fitXY="false" />
 
-        <com.getsoftwareCO.videoDownloader.view.CustomMediaController
+        <com.getsoftwareCO.bajarvideosamicelulargratis.view.CustomMediaController
             android:id="@+id/mediaFoundController"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

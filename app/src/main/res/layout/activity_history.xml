@@ -12,28 +12,29 @@
 
     <LinearLayout
         android:id="@+id/bar"
-        android:background="@color/colorPrimary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_8sdp"
         android:layout_marginBottom="@dimen/_10sdp"
-        android:orientation="horizontal">
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:padding="@dimen/_8sdp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_4sdp"
             android:layout_weight="1"
-            android:text="History"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/_15sdp" />
+            android:text="Pestañas"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/btn_delete_history"
             android:layout_width="@dimen/icon_dimen"
             android:layout_height="@dimen/icon_dimen"
             android:layout_gravity="center"
-            android:src="@drawable/ic_delete" />
+            android:src="@drawable/config_button_dark" />
     </LinearLayout>
 
     <LinearLayout

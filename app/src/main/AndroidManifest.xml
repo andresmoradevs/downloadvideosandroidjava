@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.getsoftwareCO.videoDownloader">
+    package="com.getsoftwareCO.bajarvideosamicelulargratis">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name=".VDApp"
+        android:name="com.getsoftwareCO.bajarvideosamicelulargratis.VDApp"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,14 +22,14 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning"
         tools:targetApi="m">
         <activity
-            android:name=".activity.SlashsActivity"
+            android:name="com.getsoftwareCO.bajarvideosamicelulargratis.activity.SlashsActivity"
             android:exported="false" />
         <activity
-            android:name=".activity.HistoryActivity"
-            android:parentActivityName=".activity.MainActivity" />
-        <activity android:name=".activity.GuideActivity" />
+            android:name="com.getsoftwareCO.bajarvideosamicelulargratis.activity.HistoryActivity"
+            android:parentActivityName="com.getsoftwareCO.bajarvideosamicelulargratis.activity.MainActivity" />
+        <activity android:name="com.getsoftwareCO.bajarvideosamicelulargratis.activity.GuideActivity" />
         <activity
-            android:name=".activity.SplashActivity"
+            android:name="com.getsoftwareCO.bajarvideosamicelulargratis.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -39,7 +39,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.getsoftwareCO.bajarvideosamicelulargratis.activity.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
@@ -64,7 +64,7 @@
         </activity>
 
         <service
-            android:name=".download.DownloadManager"
+            android:name="com.getsoftwareCO.bajarvideosamicelulargratis.download.DownloadManager"
             android:exported="false" />
 
         <meta-data
@@ -73,7 +73,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.getsoftwareCO.videoDownloader.fileprovider"
+            android:authorities="com.getsoftwareCO.bajarvideosamicelulargratis.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
