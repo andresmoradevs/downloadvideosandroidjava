@@ -72,7 +72,6 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
         return videos.size();
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         setRetainInstance(true);
@@ -97,8 +96,6 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
 
             btnHome = view.findViewById(R.id.btn_home);
 
-
-
             btnHome.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -106,6 +103,7 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
                     startActivity(intentHome);
                 }
             });
+            titleD.setVisibility(View.VISIBLE);
 
             Dexter.withContext(getContext())
                     .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -120,18 +118,19 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
                                 List<File> nonExistentFiles = new ArrayList<>(Arrays.asList(videoFile.listFiles()));
 
                                 if (!nonExistentFiles.isEmpty()) {
-//                                    empty.setVisibility(View.INVISIBLE);
+//                                    empty.setVisibility(View.GONE);
 //                                    emptyT.setVisibility(View.INVISIBLE);
-//                                    titleD.setVisibility(View.VISIBLE);
+                                    titleD.setVisibility(View.VISIBLE);
                                     adapter = new SavedAdapter(nonExistentFiles, getActivity().getApplicationContext());
                                     downloadsList.setAdapter(adapter);
                                     downloadsList.setLayoutManager(new GridLayoutManager(getActivity(), 2));
                                     downloadsList.setHasFixedSize(true);
+//                                    empty.setVisibility(View.GONE);
 
                                 } else {
-//                                    empty.setVisibility(View.VISIBLE);
-//                                    titleD.setVisibility(View.GONE);
-//                                    emptyT.setVisibility(View.VISIBLE);
+                                    empty.setVisibility(View.VISIBLE);
+//                                    titleD.setVisibility(View.INVISIBLE);
+                                    emptyT.setVisibility(View.VISIBLE);
                                     Log.d("12","231");
                                 }
 
@@ -139,6 +138,7 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
                             } else {
                                 Log.d("12","321");
                                 emptyT.setVisibility(View.VISIBLE);
+                                titleD.setVisibility(View.VISIBLE);
                             }
                             Log.d("12","123");
                             titleD.setVisibility(View.VISIBLE);
@@ -147,8 +147,8 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
                         @Override
                         public void onPermissionDenied(PermissionDeniedResponse response) {
                             //nada
-                            Intent intentHome  = new Intent(getContext(), MainActivity.class);
-                            startActivity(intentHome);
+//                            Intent intentHome  = new Intent(getContext(), MainActivity.class);
+//                            startActivity(intentHome);
                         }
 
                         @Override
@@ -226,6 +226,7 @@ public class DownloadsCompleted extends VDFragment implements DownloadsInProgres
         }
         onNumDownloadsCompletedChangeListener.onNumDownloadsCompletedChange();
     }
+
 
 
 }

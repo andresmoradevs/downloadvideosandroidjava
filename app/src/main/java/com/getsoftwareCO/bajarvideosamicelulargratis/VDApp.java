@@ -20,8 +20,8 @@ public class VDApp extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        MobileAds.initialize(this);
-        downloadService = new Intent(getApplicationContext(), DownloadManager.class);
+        MobileAds.initialize(instance);
+        downloadService = new Intent(instance, DownloadManager.class);
     }
 
     public Intent getDownloadService() {

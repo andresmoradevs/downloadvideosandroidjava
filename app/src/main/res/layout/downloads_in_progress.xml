@@ -83,6 +83,14 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+        <TextView
+            android:id="@+id/title_downloads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Estado de descargas"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/downloadsList"

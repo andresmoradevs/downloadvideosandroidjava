@@ -21,6 +21,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -96,7 +97,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ImageView facebook = findViewById(R.id.fb_btn);
         ImageView twitter = findViewById(R.id.twitter_btn);
         ImageView reddit = findViewById(R.id.reddit_btn);
-//        ImageView tumblr = findViewById(R.id.tumblr_btn);
         ImageView tiktok = findViewById(R.id.tiktok_btn);
 
 
@@ -135,41 +135,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View view) {
                 cardApps.setVisibility(View.GONE);
                 titleDownload.setVisibility(View.GONE);
-                browserManager.newWindow("https://www.dailymotion.com/");
+                browserManager.newWindow("https://x.com/home?lang=es");
             }
         });
 
-//        tumblr.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                browserManager.newWindow("https://www.dailymotion.com/");
-//            }
-//        });
 
         tiktok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 cardApps.setVisibility(View.GONE);
                 titleDownload.setVisibility(View.GONE);
-                browserManager.newWindow("https://www.whatsapp.com/");
+                browserManager.newWindow("https://www.threads.net/?hl=es-la");
             }
         });
-
-//        btnHome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                titleDownload.setVisibility(View.VISIBLE);
-//            }
-//        });
-
-//        Button guide = findViewById(R.id.start_guide);
-//        guide.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, GuideActivity.class);
-//                startActivity(intent);
-//            }
-//        });
 
         setUPBrowserToolbarView();
     }
@@ -188,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if(s.toString().trim().length()==0){
                     btnSearchCancel.setVisibility(View.GONE);
+                    Toast.makeText(getApplicationContext(), "Cargando...", Toast.LENGTH_SHORT).show();
                 } else {
                     btnSearchCancel.setVisibility(View.VISIBLE);
                 }
@@ -230,7 +209,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     historyClicked();
                     return true;
                 case R.id.navigation_downloads:
-                     downloadClicked();
+                    downloadClicked();
                     return true;
                 case R.id.navigation_tutorial:
                     Intent intent = new Intent(getApplicationContext(),GuideActivity.class);
@@ -260,6 +239,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 settingsClicked();
                 break;
             case R.id.btn_search:
+                titleDownload.setVisibility(View.GONE);
+                CardView cardViewApplication = findViewById(R.id.card_view_apps);
+                cardViewApplication.setVisibility(View.GONE);
                 new WebConnect(searchTextBar, this).connect();
                 break;
             default:
@@ -278,8 +260,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onBackPressed() {
-        if (manager.findFragmentByTag(DOWNLOAD) != null ||
-                manager.findFragmentByTag(HISTORY) != null) {
+        if (manager.findFragmentByTag(DOWNLOAD) != null && manager.findFragmentByTag(HISTORY) != null ) {
             VDApp.getInstance().getOnBackPressedListener().onBackpressed();
             browserManager.resumeCurrentWindow();
             navView.setSelectedItemId(R.id.navigation_home);
@@ -297,7 +278,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            MainActivity.super.onBackPressed();
+                            //MainActivity.super.onBackPressed();
+
+                            finishAffinity();
                         }
                     })
                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -330,9 +313,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             requestStoragePermission();
         } else {
             // Permiso ya concedido, proceder con la lógica de descarga
-//                        startDownload();
-//                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//                        startActivity(intent);
+
         }
         if (appLinkData != null) {
             browserManager.newWindow(appLinkData.toString());
@@ -355,7 +336,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             manager.beginTransaction().add(R.id.main_content, new DownloadsC(), DOWNLOAD).commit();
         }
     }
-
 
     public void historyClicked(){
         closeDownloads();
@@ -397,8 +377,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         browserManager.resumeCurrentWindow();
         closeDownloads();
         closeHistory();
-//        Intent intent = new Intent(getApplicationContext(),SlashsActivity.class);
-//        startActivity(intent);
     }
 
     private void closeDownloads() {

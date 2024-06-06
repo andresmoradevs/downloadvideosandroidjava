@@ -5,6 +5,7 @@
 package com.getsoftwareCO.bajarvideosamicelulargratis.adapter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -12,6 +13,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -59,16 +61,6 @@ public class SavedAdapter extends RecyclerView.Adapter<SavedAdapter.SavedHolder>
                 .load(list.get(position).getAbsoluteFile())
                 .into(holder.thumbnail);
 
-//        holder.thumbnail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Intent.ACTION_VIEW);
-//                Uri fileUri = FileProvider.getUriForFile(context, "com.getsoftwareCO.bajarvideosamicelulargratis.fileprovider", list.get(position));
-//                intent.setDataAndType(fileUri, "video/*");
-//                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-//                context.startActivity(intent);
-//            }
-//        });
         holder.thumbnail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -90,64 +82,69 @@ public class SavedAdapter extends RecyclerView.Adapter<SavedAdapter.SavedHolder>
     }
 
     private void popUp(View view, final File f) {
-        final PopupMenu popup = new PopupMenu(context.getApplicationContext(), view);
-        popup.getMenuInflater().inflate(R.menu.download_menu, popup.getMenu());
-        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            public boolean onMenuItemClick(MenuItem item) {
-                int i = item.getItemId();
-                if (i == R.id.download_delete) {
-                    new AlertDialog.Builder(context)
-                            .setMessage("Desea eliminar este video?")
-                            .setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    if (f.delete()) {
-                                        updateList();
+        final Context activityContext = context.getApplicationContext();
+
+        // Verifica si el contexto es una instancia de Activity y no está finalizando
+        if (activityContext instanceof Activity && !((Activity) activityContext).isFinishing()) {
+            final PopupMenu popup = new PopupMenu(activityContext, view);
+            popup.getMenuInflater().inflate(R.menu.download_menu, popup.getMenu());
+            popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                public boolean onMenuItemClick(MenuItem item) {
+                    int i = item.getItemId();
+                    if (i == R.id.download_delete) {
+                        new AlertDialog.Builder(activityContext)
+                                .setMessage("Are you sure you want to delete?")
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        if (f.delete()) {
+                                            updateList();
+                                        }
                                     }
-                                }
-                            })
-                            .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    //nada
-                                    dialog.dismiss();
-                                }
-                            })
-                            .create()
-                            .show();
-                    return true;
-                }
-                else if (i == R.id.download_share) {
-                    File file = new File(Environment.getExternalStoragePublicDirectory(context.getResources().getString(R.string.app_name)), f.getName());
-                    Uri fileUri = FileProvider.getUriForFile(context, "com.getsoftwareCO.bajarvideosamicelulargratis.fileprovider", file);
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                })
+                                .create()
+                                .show();
+                        return true;
+                    } else if (i == R.id.download_share) {
+                        File file = new File(Environment.getExternalStoragePublicDirectory(context.getResources().getString(R.string.app_name)), f.getName());
+                        Uri fileUri = FileProvider.getUriForFile(context, "com.descarga.bajarvideosamicelular.fileprovider", file);
 
-                    StringBuilder msg = new StringBuilder();
-                    msg.append(context.getResources().getString(R.string.msg_share));
-                    msg.append("\n");
-                    msg.append(context.getResources().getString(R.string.app_link));
+                        StringBuilder msg = new StringBuilder();
+                        msg.append(context.getResources().getString(R.string.msg_share));
+                        msg.append("\n");
+                        msg.append(context.getResources().getString(R.string.app_link));
 
-                    if (fileUri != null) {
-                        Intent shareIntent = new Intent();
-                        shareIntent.setAction(Intent.ACTION_SEND);
-                        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); // temp permission for receiving app to read this file
-                        shareIntent.setType("*/*");
-                        shareIntent.putExtra(Intent.EXTRA_TEXT, msg.toString());
-                        shareIntent.putExtra(Intent.EXTRA_STREAM, fileUri);
-                        try {
-                            context.startActivity(Intent.createChooser(shareIntent, "Share via"));
-                        } catch (ActivityNotFoundException e) {
-                            Toast.makeText(context.getApplicationContext(), "No App Available", Toast.LENGTH_SHORT).show();
+                        if (fileUri != null) {
+                            Intent shareIntent = new Intent();
+                            shareIntent.setAction(Intent.ACTION_SEND);
+                            shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION); // temp permission for receiving app to read this file
+                            shareIntent.setType("*/*");
+                            shareIntent.putExtra(Intent.EXTRA_TEXT, msg.toString());
+                            shareIntent.putExtra(Intent.EXTRA_STREAM, fileUri);
+                            try {
+                                activityContext.startActivity(Intent.createChooser(shareIntent, "Share via"));
+                            } catch (ActivityNotFoundException e) {
+                                Toast.makeText(activityContext, "No App Available", Toast.LENGTH_SHORT).show();
+                            }
                         }
+                        return true;
+                    } else {
+                        return onMenuItemClick(item);
                     }
-                    return true;
                 }
-                else {
-                    return onMenuItemClick(item);
-                }
-            }
-        });
-        popup.show();
+            });
+            popup.show();
+        } else {
+            Log.e("popUp", "Invalid context or activity is finishing.");
+        }
     }
+
 
     public void updateList() {
         File videoFile = new File(Environment.getExternalStoragePublicDirectory(context.getResources().getString(R.string.app_name)).getAbsolutePath());

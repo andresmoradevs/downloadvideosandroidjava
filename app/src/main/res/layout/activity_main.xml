@@ -100,6 +100,15 @@
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:id="@+id/tiktok_btn"
+                            android:layout_width="0dp"
+                            android:layout_height="64dp"
+                            android:layout_margin="40px"
+                            android:layout_weight="1"
+                            android:maxWidth="64dp"
+                            android:src="@drawable/threads" />
+
+                        <ImageView
                             android:id="@+id/instagram_btn"
                             android:layout_width="0dp"
                             android:layout_height="64dp"
@@ -107,6 +116,8 @@
                             android:layout_weight="1"
                             android:maxWidth="64dp"
                             android:src="@drawable/frame_fb" />
+
+
 
                         <ImageView
                             android:id="@+id/fb_btn"
@@ -126,6 +137,7 @@
                             android:maxWidth="64dp"
                             android:src="@drawable/frame_vim" />
 
+
                         <ImageView
                             android:id="@+id/reddit_btn"
                             android:layout_width="0dp"
@@ -133,16 +145,9 @@
                             android:layout_margin="40px"
                             android:layout_weight="1"
                             android:maxWidth="64dp"
-                            android:src="@drawable/frame_dai" />
+                            android:src="@drawable/x_logo" />
 
-                        <ImageView
-                            android:id="@+id/tiktok_btn"
-                            android:layout_width="0dp"
-                            android:layout_height="64dp"
-                            android:layout_margin="40px"
-                            android:layout_weight="1"
-                            android:maxWidth="64dp"
-                            android:src="@drawable/frame_wa" />
+
 
                     </LinearLayout>
 

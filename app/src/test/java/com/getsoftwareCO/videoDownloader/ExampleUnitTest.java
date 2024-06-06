@@ -2,7 +2,7 @@
  ~ Copyright (c) 2024.  Andres Mora getSoftware CO
  */
 
-package com.hurricaneDev.videoDownloader;
+package com.getsoftwareCO.videoDownloader;
 
 import org.junit.Test;
 

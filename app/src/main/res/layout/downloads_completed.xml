@@ -61,7 +61,6 @@
         app:layout_constraintVertical_bias="0.317">
 
         <TextView
-            android:visibility="invisible"
             android:id="@+id/title_downloads"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -123,7 +122,7 @@
         </RelativeLayout>
 
         <TextView
-            android:visibility="invisible"
+            android:visibility="gone"
             android:id="@+id/empty_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

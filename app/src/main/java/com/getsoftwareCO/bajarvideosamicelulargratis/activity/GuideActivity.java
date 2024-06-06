@@ -53,7 +53,6 @@ public class GuideActivity extends AppCompatActivity {
     DownloadsCompleted.OnNumDownloadsCompletedChangeListener onNumDownloadsCompletedChangeListener;
     SavedAdapter adapter;
     LinearLayout empty;
-//    private TextView infoText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +62,6 @@ public class GuideActivity extends AppCompatActivity {
 
         back = findViewById(R.id.info_back);
         next = findViewById(R.id.info_next);
-
-//        infoText = findViewById(R.id.info_text);
         ImageView close = findViewById(R.id.close);
 
         pager = findViewById(R.id.guide_pager);
@@ -122,38 +119,14 @@ public class GuideActivity extends AppCompatActivity {
                       infoText.setVisibility(View.VISIBLE);
                       next.setBackgroundResource(R.drawable.btn_ok);
                       back.setVisibility(View.INVISIBLE);
-//                      next.setOnClickListener(new View.OnClickListener() {
-//                          @Override
-//                          public void onClick(View view) {
-//                              checkAndRequestPermissions();
-////                              if (ContextCompat.checkSelfPermission(getApplicationContext(),
-////                                      Manifest.permission.WRITE_EXTERNAL_STORAGE ) == PackageManager.PERMISSION_GRANTED) {
-////                                  // Permiso ya concedido, realiza la descarga del archivo
-////                                  Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-////                                  startActivity(intent);
-//////                                  downloadFile();
-////                              } else {
-////                                  // Solicita el permiso
-//////                                  requestStoragePermission();
-////                              }
-//                          }
-//                      });
 
                     break;
                 case 3:
-
-
-
-//                    infoText.setVisibility(View.INVISIBLE);
-//                    infoText.setVisibility(View.GONE);
-//                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//                    startActivity(intent);
 
                     break;
                 default:
                     infoText.setVisibility(View.INVISIBLE);
                     back.setVisibility(View.INVISIBLE);
-
 
             }
         }
@@ -224,7 +197,7 @@ public class GuideActivity extends AppCompatActivity {
                 // Todos los permisos concedidos, realiza la descarga del archivo
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
-//                downloadFile();
+
             } else {
                 // Alguno(s) permiso(s) denegado(s)
                 Toast.makeText(this, "Permiso denegado", Toast.LENGTH_SHORT).show();

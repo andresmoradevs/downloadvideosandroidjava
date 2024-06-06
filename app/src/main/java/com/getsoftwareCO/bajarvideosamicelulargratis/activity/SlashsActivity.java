@@ -85,95 +85,11 @@ public class SlashsActivity extends AppCompatActivity implements View.OnClickLis
         navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-//        ImageView instagram = findViewById(R.id.instagram_btn);
-//        ImageView facebook = findViewById(R.id.fb_btn);
-//        ImageView twitter = findViewById(R.id.twitter_btn);
-//        ImageView reddit = findViewById(R.id.reddit_btn);
-////        ImageView tumblr = findViewById(R.id.tumblr_btn);
-//        ImageView tiktok = findViewById(R.id.tiktok_btn);
-
         final CardView cardApps = findViewById(R.id.card_view_apps);
 
-//        instagram.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cardApps.setVisibility(View.GONE);
-//                titleDownload.setVisibility(View.GONE);
-//                browserManager.newWindow("https://www.facebook.com/");
-//
-//            }
-//        });
-//
-//        facebook.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cardApps.setVisibility(View.GONE);
-//                titleDownload.setVisibility(View.GONE);
-//                browserManager.newWindow("https://www.instagram.com/");
-//            }
-//        });
-//
-//        twitter.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cardApps.setVisibility(View.GONE);
-//                titleDownload.setVisibility(View.GONE);
-//                browserManager.newWindow("https://www.vimeo.com/");
-//            }
-//        });
-//
-//        reddit.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cardApps.setVisibility(View.GONE);
-//                titleDownload.setVisibility(View.GONE);
-//                browserManager.newWindow("https://www.dailymotion.com/");
-//            }
-//        });
-//
-//        tiktok.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                cardApps.setVisibility(View.GONE);
-//                titleDownload.setVisibility(View.GONE);
-//                browserManager.newWindow("https://www.whatsapp.com/");
-//            }
-//        });
-
-//        setUPBrowserToolbarView();
     }
 
     private void setUPBrowserToolbarView(){
-
-//        // Toolbar search
-//        btnSearchCancel = findViewById(R.id.btn_search_cancel);
-//        btnSearchCancel.setOnClickListener(this);
-//        ImageView btnSearch = findViewById(R.id.btn_search);
-//        searchTextBar = findViewById(R.id.et_search_bar);
-
-        /*hide/show clear button in search view*/
-//        TextWatcher searchViewTextWatcher = new TextWatcher() {
-//            @Override
-//            public void onTextChanged(CharSequence s, int start, int before, int count) {
-//                if(s.toString().trim().length()==0){
-//                    btnSearchCancel.setVisibility(View.GONE);
-//                } else {
-//                    btnSearchCancel.setVisibility(View.VISIBLE);
-//                }
-//            }
-//            @Override
-//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-//                //nada
-//            }
-//
-//            @Override
-//            public void afterTextChanged(Editable s) {
-//                //nada
-//            }
-//        };
-//        searchTextBar.addTextChangedListener(searchViewTextWatcher);
-//        searchTextBar.setOnEditorActionListener(this);
-//        btnSearch.setOnClickListener(this);
 
         //Toolbar home button
         ImageView toolbarHome = findViewById(R.id.btn_home);
@@ -228,22 +144,12 @@ public class SlashsActivity extends AppCompatActivity implements View.OnClickLis
             case R.id.btn_settings:
                 settingsClicked();
                 break;
-//            case R.id.btn_search:
-//                new WebConnect(searchTextBar, this).connect();
-//                break;
+
             default:
                 break;
         }
     }
 
-//    @Override
-//    public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
-//        boolean handled = false;
-//        if (actionId == EditorInfo.IME_ACTION_GO) {
-//            new WebConnect(searchTextBar, this).connect();
-//        }
-//        return handled;
-//    }
 
     @Override
     public void onBackPressed() {
@@ -299,9 +205,7 @@ public class SlashsActivity extends AppCompatActivity implements View.OnClickLis
             requestStoragePermission();
         } else {
             // Permiso ya concedido, proceder con la lógica de descarga
-//                        startDownload();
-//                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//                        startActivity(intent);
+
         }
         if (appLinkData != null) {
             browserManager.newWindow(appLinkData.toString());
@@ -373,8 +277,7 @@ public class SlashsActivity extends AppCompatActivity implements View.OnClickLis
         browserManager.resumeCurrentWindow();
         closeDownloads();
         closeHistory();
-//        Intent intent = new Intent(getApplicationContext(),SlashsActivity.class);
-//        startActivity(intent);
+
     }
 
     private void closeDownloads() {

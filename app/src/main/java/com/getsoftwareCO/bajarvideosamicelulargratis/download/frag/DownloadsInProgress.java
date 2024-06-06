@@ -29,6 +29,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -82,6 +83,12 @@ public class DownloadsInProgress extends VDFragment implements DownloadManager.O
 
     public DownloadsInProgress(Activity activity) {
         this.activity = activity;
+    }
+
+    @Override
+    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
+        super.onViewStateRestored(savedInstanceState);
+        startDownload();
     }
 
     public interface OnAddDownloadedVideoToCompletedListener {
@@ -151,7 +158,7 @@ public class DownloadsInProgress extends VDFragment implements DownloadManager.O
             btnHome.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intentHome  = new Intent(getContext(), MainActivity.class);
+                    Intent intentHome  = new Intent(activity.getApplicationContext(), MainActivity.class);
                     startActivity(intentHome);
                 }
             });
@@ -560,7 +567,7 @@ public class DownloadsInProgress extends VDFragment implements DownloadManager.O
             if (file.exists()) {
                 if (video.size != null) {
                     long downloadedSize = file.length();
-                    downloaded = Formatter.formatFileSize(activity, downloadedSize);
+                    downloaded = Formatter.formatFileSize(view.getContext(), downloadedSize);
                     double percent = 100d * downloadedSize / Long.parseLong(video.size);
                     if (percent > 100d) {
                         percent = 100d;
@@ -568,14 +575,14 @@ public class DownloadsInProgress extends VDFragment implements DownloadManager.O
                     DecimalFormat percentFormat = new DecimalFormat("00.00");
                     String percentFormatted = percentFormat.format(percent);
                     progress.setProgress((int) percent);
-                    String formattedSize = Formatter.formatFileSize(activity, Long
+                    String formattedSize = Formatter.formatFileSize(getContext(), Long
                             .parseLong(video.size));
                     String statusString = downloaded + " / " + formattedSize + " " + percentFormatted +
                             "%";
                     status.setText(statusString);
                 } else {
                     long downloadedSize = file.length();
-                    downloaded = Formatter.formatShortFileSize(activity, downloadedSize);
+                    downloaded = Formatter.formatShortFileSize(view.getContext(), downloadedSize);
                     status.setText(downloaded);
                     if (!getAdapter().isPaused()) {
                         if (!progress.isIndeterminate()) {
@@ -587,7 +594,7 @@ public class DownloadsInProgress extends VDFragment implements DownloadManager.O
                 }
             } else {
                 if (video.size != null) {
-                    String formattedSize = Formatter.formatShortFileSize(activity, Long
+                    String formattedSize = Formatter.formatShortFileSize(getContext(), Long
                             .parseLong(video.size));
                     String statusString = "0KB / " + formattedSize + " 0%";
                     status.setText(statusString);
