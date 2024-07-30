@@ -12,6 +12,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private BottomNavigationView navView;
     private TextView titleDownload;
     private ImageView btnHome;
+    private static final int PERMISSION_REQUEST_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -148,10 +150,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 browserManager.newWindow("https://www.threads.net/?hl=es-la");
             }
         });
-
+        checkPermissions();
         setUPBrowserToolbarView();
     }
-
+    private void checkPermissions() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Android 11 (API 30) and above
+            if (!Environment.isExternalStorageManager()) {
+                requestStoragePermission();
+            }
+        } else {
+            // Below Android 11
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
+                    || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+                        PERMISSION_REQUEST_CODE);
+            }
+        }
+    }
     private void setUPBrowserToolbarView(){
 
         // Toolbar search
@@ -321,7 +338,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void requestStoragePermission() {
-
+        try {
+            Intent intent = new Intent(android.provider.Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION,
+                    Uri.parse("package:" + getPackageName()));
+            startActivityForResult(intent, PERMISSION_REQUEST_CODE);
+        } catch (Exception e) {
+            Intent intent = new Intent();
+            intent.setAction(android.provider.Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+            startActivityForResult(intent, PERMISSION_REQUEST_CODE);
+        }
     }
 
     public void browserClicked() {
